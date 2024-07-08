@@ -8,35 +8,13 @@
         public bool Charge(int customerId, float amount)
         {
             var customer = FingById(customerId);
-            if (customer == null)
-            {
-                return false;
-            }
-
-            if (GetBalance(customerId) + customer.AllowedDebit < amount)
-            {
-                return false;
-            }
-
-            customer.Outcome += amount;
-            return true;
+            return customer?.Charge(amount) ?? false;
         }
 
         public void Fund(int customerId, float amount)
         {
             Custromer? customer = FingById(customerId);
-            if (customer == null)
-            {
-                return;
-            }
-
-            customer.Income += amount;
-        }
-
-        public float? GetBalance(int customerId)
-        {
-            var customer = FingById(customerId);
-            return customer?.Income - customer?.Outcome;
+            customer?.Fund(amount);
         }
 
         private Custromer? FingById(int customerId)
