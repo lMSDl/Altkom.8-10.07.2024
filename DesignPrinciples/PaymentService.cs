@@ -17,13 +17,13 @@
 
         public bool Charge(int customerId, float amount)
         {
-            var customer = Customers.SingleOrDefault(x => x.Id == customerId);
+            var customer = FingById(customerId);
             if (customer == null)
             {
                 return false;
             }
 
-            if (customer.Income - customer.Outcome + customer.AllowedDebit < amount)
+            if (GetBalance(customerId) + customer.AllowedDebit < amount)
             {
                 return false;
             }
@@ -34,7 +34,7 @@
 
         public void Fund(int customerId, float amount)
         {
-            var customer = Customers.Where(x => x.Id == customerId).SingleOrDefault();
+            Custromer? customer = FingById(customerId);
             if (customer == null)
             {
                 return;
@@ -45,8 +45,13 @@
 
         public float? GetBalance(int customerId)
         {
-            var customer = Customers.Where(x => x.Id == customerId).SingleOrDefault();
+            var customer = FingById(customerId);
             return customer?.Income - customer?.Outcome;
+        }
+
+        private Custromer? FingById(int customerId)
+        {
+            return Customers.Where(x => x.IsActive).Where(x => x.Id == customerId).SingleOrDefault();
         }
     }
 }
