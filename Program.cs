@@ -3,7 +3,7 @@ using Altkom._8_10._07._2024.SOLID.L;
 
 
 
-Altkom._8_10._07._2024.DesignPatterns.Creational.FactoryMethod.Client.Execute();
+Altkom._8_10._07._2024.DesignPatterns.Creational.AbstractFactory.Client.Execute();
 
 
 
