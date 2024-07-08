@@ -15,8 +15,8 @@ if(customer is null)
 
 var paymentService = new PaymentService();
 
-paymentService.Fund(customer, 500);
-if (paymentService.Charge(customer, 100))
+paymentService.Fund(customer.Account, 500);
+if (paymentService.Charge(customer.Account, 100))
     Console.WriteLine($"Customer {customerId} charged. Actual balance: {customer.Account.GetBalance()}");
 else
     Console.WriteLine($"Not enought founds on customer {customerId} acconut! Actual balance: {customer.Account.GetBalance()}");
