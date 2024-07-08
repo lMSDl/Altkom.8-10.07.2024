@@ -8,6 +8,15 @@ namespace Altkom._8_10._07._2024.DesignPatterns.Creational.Builder
 {
     internal class Vehicle
     {
+
+        /*public class VehicleBuilder()
+        {
+            private Vehicle Vehicle = new Vehicle();
+
+            // CDN....
+        }*/
+
+
         public Vehicle()
         {
 
