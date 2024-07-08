@@ -5,16 +5,6 @@
     {
         private ICollection<Custromer> Customers { get; } = [new Custromer(1), new Custromer(2), new Custromer(3), new Custromer(4), new Custromer(5)];
 
-        public bool DeleteCustomer(Custromer customer)
-        {
-            return Customers.Remove(customer);
-        }
-
-        public Custromer FindByAllowedDebit(float allowedDebit)
-        {
-            return Customers.SingleOrDefault(x => x.AllowedDebit == allowedDebit);
-        }
-
         public bool Charge(int customerId, float amount)
         {
             var customer = FingById(customerId);
