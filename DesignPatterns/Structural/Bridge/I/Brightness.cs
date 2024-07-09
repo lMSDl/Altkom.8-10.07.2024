@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace Altkom._8_10._07._2024.DesignPatterns.Structural.Bridge.I
 {
-    internal abstract class Color
+    internal abstract class Brightness
     {
-
-        public Brightness Brightness { get; set; }
 
         public override string ToString()
         {
-            return $"{(Brightness is null ? "" : Brightness)}{GetType().Name}";
+            return GetType().Name;
         }
     }
 }

@@ -8,10 +8,11 @@ namespace Altkom._8_10._07._2024.DesignPatterns.Structural.Bridge.I
 {
     internal abstract class Shape
     {
+        public Color? Color { get; set; }
 
         public override string ToString()
         {
-            return GetType().Name;
+            return $"{(Color is null ? "" : Color)}{GetType().Name}";
         }
     }
 }
