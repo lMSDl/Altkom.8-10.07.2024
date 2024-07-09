@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Altkom._8_10._07._2024.DesignPatterns.Creational.Builder
+﻿namespace Altkom._8_10._07._2024.DesignPatterns.Creational.Builder
 {
-    internal class Vehicle
+    internal class Vehicle : ICloneable
     {
 
         /*public class VehicleBuilder()
@@ -53,6 +47,11 @@ namespace Altkom._8_10._07._2024.DesignPatterns.Creational.Builder
         public int Doors { get; set; }
         public int? TrunkCapacity { get; set; }
         public int? EnginePower { get; set; }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
 
         public override string ToString()
         {

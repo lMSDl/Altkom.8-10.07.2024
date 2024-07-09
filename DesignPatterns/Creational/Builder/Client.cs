@@ -20,6 +20,10 @@
 
             Console.WriteLine(vehicle);
 
+            builder.SetEngine(150);
+
+            Console.WriteLine(vehicle);
+
             vehicle = new VehilceBuilder()
                         .SetEngine(100)
                         .SetWheels(4)
