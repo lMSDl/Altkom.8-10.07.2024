@@ -6,6 +6,10 @@
         {
             var circle = new Circle() { R = 5 };
             CheckR(circle);
+
+            var square = new Square() { A = 7 };
+
+            CheckR(new SquareToCircleAdapter(square));
         }
 
         public static void CheckR(ICircle circle)
