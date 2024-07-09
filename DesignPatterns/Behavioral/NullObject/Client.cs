@@ -9,9 +9,9 @@ namespace Altkom._8_10._07._2024.DesignPatterns.Behavioral.NullObject
     internal class Client
     {
 
-        public static void Execute(int a)
+        public static void Execute()
         {
-            var objects = new AbstractObject?[] { new RealObject(), null };
+            var objects = new AbstractObject?[] { new RealObject(), new NullObject() };
             var random = new Random();
 
             while(true)
@@ -19,12 +19,16 @@ namespace Altkom._8_10._07._2024.DesignPatterns.Behavioral.NullObject
                 var value = random.Next(0, objects.Length);
                 Console.ReadLine();
 
-                if (objects[value] is null)
-                    continue;
+                //if (objects[value] is null)
+                //    continue;
 
-                objects[value]?.Method1();
-                objects[value]?.Method2();
-                objects[value]?.Method3();
+                //objects[value]?.Method1();
+                //objects[value]?.Method2();
+                //objects[value]?.Method3();
+
+                objects[value].Method1();
+                objects[value].Method2();
+                objects[value].Method3();
             }
 
         }
