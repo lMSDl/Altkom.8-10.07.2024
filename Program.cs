@@ -3,7 +3,7 @@ using Altkom._8_10._07._2024.SOLID.L;
 
 
 
-Altkom._8_10._07._2024.DesignPatterns.Structural.Proxy.Client.Execute();
+Altkom._8_10._07._2024.DesignPatterns.Behavioral.NullObject.Client.Execute();
 
 
 
