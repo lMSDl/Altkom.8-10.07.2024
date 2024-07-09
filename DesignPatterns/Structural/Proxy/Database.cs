@@ -16,6 +16,11 @@ namespace Altkom._8_10._07._2024.DesignPatterns.Structural.Proxy
             Console.WriteLine("Otwieranie połączenia z bazą danych...");
         }
 
+        public void Dispose()
+        {
+            Console.WriteLine( "Zamykanie połączenia z bazą danych..." );
+        }
+
         public async Task RequestAsync(int @int)
         {
             if(_connectionCounter >= MAX_CONNECTIONS)
