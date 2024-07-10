@@ -15,9 +15,10 @@ namespace Altkom._8_10._07._2024.DesignPatterns.Behavioral.Visitor.I
                 new Hyperlink() {Text = "Hyperlink",  Link=@"https:\\some.url.pl"}
             };
 
+            var visitor = new HtmlVisitor();
             foreach (var item in collection)
             {
-                Console.Write(item.ToHtml());
+                Console.Write(item.Accept(visitor));
             }
         }
     }

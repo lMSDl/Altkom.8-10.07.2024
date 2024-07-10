@@ -8,6 +8,6 @@ namespace Altkom._8_10._07._2024.DesignPatterns.Behavioral.Visitor.I
 {
     internal interface IElement
     {
-        string ToHtml();
+        string Accept(IVisitor visitor);
     }
 }

@@ -9,9 +9,10 @@ namespace Altkom._8_10._07._2024.DesignPatterns.Behavioral.Visitor.I
     internal class BoldText : IElement
     {
         public string Text { get; set; }
-        public string ToHtml()
+
+        public string Accept(IVisitor visitor)
         {
-            return $"<b>{Text}</b>";
+            return visitor.Visit(this);
         }
     }
 }
