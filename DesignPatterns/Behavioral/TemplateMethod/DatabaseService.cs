@@ -1,6 +1,6 @@
 ﻿namespace Altkom._8_10._07._2024.DesignPatterns.Behavioral.TemplateMethod
 {
-    internal class DatabaseService
+    internal class DatabaseService : IDisposable
     {
         public void Dispose()
         {

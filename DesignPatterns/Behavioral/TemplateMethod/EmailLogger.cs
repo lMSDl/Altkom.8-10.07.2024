@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace Altkom._8_10._07._2024.DesignPatterns.Behavioral.TemplateMethod
 {
-    internal class EmailLogger
+    internal class EmailLogger : Logger<string, IDisposable>
     {
-        public void Log(string message)
+        protected override void Save(string item, IDisposable service)
         {
-            var messageToLog = SerializeMessage(message);
-            SendLogToEmail(messageToLog);
+            Console.WriteLine("Sending Email with Log Message : " + item);
         }
-        private string SerializeMessage(string message)
+
+        protected override string CreateItem(string message)
         {
             Console.WriteLine("Serializing message");
             return message;
         }
-        private void SendLogToEmail(string message)
+
+        protected override IDisposable GetService()
         {
-            Console.WriteLine("Sending Email with Log Message : " + message);
+            return null;
         }
     }
 }
