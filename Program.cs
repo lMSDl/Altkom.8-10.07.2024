@@ -3,7 +3,7 @@ using Altkom._8_10._07._2024.SOLID.L;
 
 
 
-Altkom._8_10._07._2024.DesignPatterns.Behavioral.Visitor.I.Client.Execute();
+Altkom._8_10._07._2024.DesignPatterns.Behavioral.Visitor.II.Client.Execute();
 
 
 
